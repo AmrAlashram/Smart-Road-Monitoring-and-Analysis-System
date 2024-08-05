@@ -1,4 +1,4 @@
-# Data Pipeline with Reddit, Airflow, Celery, Postgres, S3, AWS Glue, Athena, and Redshift
+# Real-time Data Pipeline with Kafka, Spark, S3, AWS Glue, Athena, and Redshift
 
 This project uses a real-time data streaming pipeline to monitor a smart road and analyze data coming it. The pipeline leverages a combination of tools and services including: Python, Docker, Apache Zookeeper, Apache Kafka, Apache Spark, AWS S3, AWS Cloud, AWS Glue, AWS Athena, AWS Redshift.
 
@@ -13,9 +13,9 @@ This project uses a real-time data streaming pipeline to monitor a smart road an
 
 The pipeline is designed to:
 
-1. Extract data from Reddit using its API.
-2. Store the raw data into an S3 bucket from Airflow.
-3. Transform the data using AWS Glue and Amazon Athena.
+1. Kafka receive real-time data from 5 IoT-like data generators and forward data to Spark Cluster.
+2. Spark Streaming receive the data transform it and load it in a Data Lake (AWS S3)
+3. Transform the data in S3 using AWS Glue and Amazon Athena.
 4. Load the transformed data into Amazon Redshift for analytics and querying.
 
 ## Architecture
